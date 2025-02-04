@@ -1,0 +1,119 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+:root {
+  --primary-blue: #4e47ff;
+  --primary-text: #8987a1;
+  --bg-color: #f5f8ff;
+  --black: #252432;
+  --border-black: #2b2b2b;
+}
+
+/* utility classes */
+.gap_32px {
+  gap: 32px;
+}
+
+.bodymargin {
+  margin: 0 112px;
+}
+
+/* __________ */
+body {
+  color: var(--primary-text);
+  background-color: var(--bg-color);
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-image: url("../images/banner-gradient.png");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: top;
+}
+h2 {
+  font-size: 60px;
+  color: var(--black);
+  font-family: "Raleway", serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0px;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  gap: 48px;
+  border-radius: 20px;
+  padding: 22px 42px 22px 56px;
+  background-color: rgb(255, 255, 255, 0.6);
+  border: 1px solid white;
+}
+
+ul li.active {
+  font-weight: bold;
+  color: var(--black);
+}
+
+button {
+  background-color: transparent;
+  color: var(--primary-text);
+  border: none;
+  border-radius: 10px;
+}
+.auth {
+  display: flex;
+  gap: 19px;
+}
+.signup {
+  background-color: var(--primary-blue);
+  border-radius: 10px;
+  padding: 12px;
+  color: white;
+}
+
+.bigText {
+  font-family: "Raleway", serif;
+  max-width: 764px;
+  font-weight: bold;
+  color: var(--black);
+  margin: 0px auto;
+  padding-bottom: 155px;
+  padding-top: 104px;
+}
+.bigText button {
+  margin: 0px auto;
+  display: block;
+  background-color: var(--black);
+  padding: 18px 58px;
+  color: white;
+  font-weight: bold;
+}
+.margin_36 {
+  margin-bottom: 36px;
+  font-size: 73.34px;
+  text-align: center;
+}
+
+.card {
+  padding-bottom: 34px;
+  padding-inline: 24px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid var(--border-black);
+}
+
+.whatwedo {
+  display: flex;
+}
+.whatwedo .whatwedo_1 {
+  flex-basis: 66%;
+  list-style-type: none;
+}
+.whatwedo .whatwedo_2 {
+  flex-basis: 33%;
+}
