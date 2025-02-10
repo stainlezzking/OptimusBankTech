@@ -11,12 +11,15 @@
   --border-black: #2b2b2b;
 }
 
-/* utility classes */
+/* Custom utility classes */
 .gap_32px {
   gap: 32px;
 }
 .mb_32 {
   margin-bottom: 32px;
+}
+.w-282 {
+  width: 282px;
 }
 
 .bodymargin,
@@ -29,23 +32,32 @@ section {
 .relative {
   position: relative;
 }
-/* @media screen and (min-width: 1600px) {
-  .bodymargin,
-  section {
-    margin: 0 auto;
-    max-width: 1600px;
-  }
-} */
+.inter {
+  font-family: "Inter", serif;
+}
+.raleway {
+  font-family: "Raleway", serif;
+}
 
 section h2 {
   margin-bottom: 32px;
+}
+.button_primary {
+  background-color: var(--primary-blue);
+  color: white;
+  font-size: 16px;
+  padding: 18px 0;
+  border-radius: 10px;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  white-space: none;
 }
 
 /* __________ */
 body {
   color: var(--primary-text);
   background-color: var(--bg-color);
-  font-family: "Inter", serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-size: 14px;
@@ -79,6 +91,13 @@ nav ul {
   border: 1px solid white;
 }
 
+nav ul li:hover:not(.active) {
+  transform: scale(1.2);
+  transform-origin: center;
+  color: var(--black);
+  cursor: pointer;
+  transition: transform 0.1s ease-out;
+}
 ul li.active {
   font-weight: bold;
   color: var(--black);
@@ -87,6 +106,7 @@ ul li.active {
 button {
   background-color: transparent;
   color: var(--primary-text);
+  cursor: pointer;
   border: none;
   border-radius: 10px;
 }
@@ -118,6 +138,27 @@ button {
   padding: 18px 58px;
   color: white;
   font-weight: bold;
+  position: relative;
+}
+.bigText button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 10px;
+  width: 0px;
+  transition: width 0.2s ease-out;
+  background-color: var(--primary-blue);
+}
+.bigText button:hover::before {
+  width: 100%;
+}
+
+@keyframes hideTextAndScale {
+  0% {
+  }
 }
 .margin_36 {
   margin-bottom: 36px;
@@ -238,6 +279,7 @@ section#ourwork {
   text-align: center;
   margin-bottom: 57px;
   font-weight: 400;
+  line-height: 21px;
 }
 
 #ourwork #intro > span {
@@ -317,4 +359,297 @@ section#ourwork {
   display: flex;
   gap: 6px;
   margin-top: 4px;
+}
+
+/* 
+ --- Pricing section ---
+      ##########
+*/
+section#pricing {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+}
+section#pricing > div {
+  width: 624px;
+}
+section#pricing > div:first-child {
+  width: 387px;
+  display: flex;
+  flex-direction: column;
+  gap: 81px;
+}
+section#pricing p {
+  line-height: 21px;
+}
+section#pricing .card {
+  background-color: white;
+  padding: 37px 26px 28px;
+  border-radius: 20px;
+}
+section#pricing > div:first-child h4 {
+  font-size: 34.07px;
+  color: var(--black);
+  margin-bottom: 31px;
+}
+
+section#pricing > div:last-child {
+  padding: 43px 22px 25px;
+}
+
+section#pricing > div:last-child > div:first-child {
+  margin-bottom: 41px;
+  padding: 0 28px;
+}
+section#pricing > div:last-child > div:first-child h4 {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 36px;
+  color: var(--black);
+  margin-bottom: 31px;
+}
+section#pricing > div:last-child > div:first-child #list {
+  display: flex;
+  justify-content: space-between;
+}
+section#pricing > div:last-child > div:first-child ul {
+  margin-top: 41px;
+  list-style-type: none;
+  list-style-position: inside;
+  color: var(--black);
+  font-weight: 400;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+section#pricing > div:last-child > div:first-child ul li::before {
+  content: "";
+  display: block;
+  background-image: url("../images/check.png");
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+section#pricing > div:last-child > div:first-child ul li {
+  position: relative;
+  padding-left: 34px;
+}
+section#pricing > div:last-child > div:last-child {
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  font-size: 60px;
+  color: var(--black);
+  padding: 28px 42px;
+  font: "Inter";
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section#pricing > div:last-child > div:last-child span {
+  color: var(--primary-text);
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+}
+
+/* 
+ --- FAQ section ---
+      ##########
+*/
+
+section#faq {
+  padding-top: 198px;
+  margin: 0px;
+  background-image: url("../images/faq.png");
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-color: var(--bg-color);
+  background-blend-mode: color-burn;
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  padding-bottom: 111px;
+  border-bottom: 1px solid #d6dded;
+}
+
+section#faq h2 {
+  width: 387px;
+  margin-top: 64px;
+}
+section#faq p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+section#faq ul {
+  list-style-type: none;
+  width: 696px;
+}
+section#faq ul li:not(:last-child) {
+  margin-bottom: 16px;
+}
+section#faq ul svg {
+  cursor: pointer;
+}
+section#faq li {
+  padding: 24px 24px 24px 30px;
+  display: flex;
+  font-family: "Raleway", serif;
+  color: var(--black);
+  font-size: 18px;
+  font-weight: 700;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  background-color: white;
+}
+section#faq ul li:first-child {
+  display: block;
+}
+section#faq ul li:first-child div {
+  display: flex;
+  justify-content: space-between;
+}
+
+section#faq ul li:first-child p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 16px;
+}
+
+/* 
+ --- Contact section ---
+      ##########
+*/
+
+section#contact {
+  margin: 0px;
+  padding-top: 124px;
+  background-image: url("../images/footer_gradient.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section#contact h2 {
+  text-align: center;
+  margin-bottom: 71px;
+}
+
+section#contact form {
+  width: 696px;
+  margin: 0 auto;
+}
+
+section#contact form label {
+  font-weight: bold;
+  color: var(--black);
+  display: block;
+  margin-bottom: 10px;
+}
+section#contact form .group {
+  margin-bottom: 16px;
+}
+input,
+textarea {
+  display: block;
+  border: 1px solid #d6d6d6;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  outline: none;
+  box-shadow: none;
+  width: 100%;
+  padding: 20px 32px;
+  border-radius: 10px;
+}
+textarea {
+  height: 222px;
+}
+input::placeholder,
+textarea::placeholder {
+  font-size: 20px;
+  line-height: 30px;
+  color: var(--primary-text);
+  font-family: "Inter", serif;
+}
+section#contact form button {
+  margin-top: 25px;
+}
+
+footer {
+  margin: 156px 112px 0px 112px;
+  background-color: white;
+  padding: 84px 72px 78px;
+  border-radius: 40px;
+  font-size: 16px;
+}
+footer .footerLinks {
+  display: flex;
+  justify-content: space-between;
+}
+footer .footerLinks ul {
+  list-style-type: none;
+  display: flex;
+  gap: 48px;
+}
+footer .footerLinks ul li:hover {
+  cursor: pointer;
+  color: var(--black);
+  transform: scale(1.5);
+  transform-origin: center;
+  transition: transform 0.1s ease-out;
+}
+footer img {
+  margin-bottom: 38px;
+}
+
+footer > div p {
+  margin-bottom: 61px;
+  max-width: 356px;
+}
+footer > div div div {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+footer #lastdiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer #socials span {
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+footer #socials span path {
+  fill: #151515;
+}
+footer #socials span:hover {
+  background-color: var(--black);
+}
+footer #socials span:hover path {
+  fill: white;
+}
+
+footer #socials {
+  display: flex;
+  gap: 10px;
+}
+
+#withlove:hover {
+  fill: red;
+  cursor: pointer;
 }
